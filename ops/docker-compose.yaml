@@ -1,9 +1,10 @@
 version: "3"
 services:
-  szr:
+
+  pity:
     build:
       context: ../
-      dockerfile: ./dockerfile
+      dockerfile: ops/dockerfile
       args:
         buildno: 1
     container_name: szr_server
@@ -13,8 +14,11 @@ services:
     environment:
       - TZ=Asia/Shanghai
     networks:
-      szr_net:
+      pity_net:
         aliases:
-          - szr_server
+        - szr_server
+    volumes:
+      - ./dev.env.ops:/szr/conf/dev.env
+
 networks:
   szr_net:
