@@ -14,7 +14,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
     networks:
-      pity_net:
+      szr_net:
         aliases:
         - szr_server
     volumes:
