@@ -1,0 +1,20 @@
+version: "3"
+services:
+  szr:
+    build:
+      context: ../
+      dockerfile: ./dockerfile
+      args:
+        buildno: 1
+    container_name: szr_server
+    ports:
+      - "7777:7777"
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      szr_net:
+        aliases:
+          - szr_server
+networks:
+  szr_net:

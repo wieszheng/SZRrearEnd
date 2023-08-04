@@ -1,4 +1,8 @@
-pyjwt==2.1.0
+Flask==2.3.2
+Flask-Cors==3.0.10
+Flask-SQLAlchemy==2.5.1
+PyJWT==2.1.0
+PyYAML==5.4.1
 mysql-connector-python==8.1.0
 requests~=2.23.0
 sqlalchemy==1.4.32

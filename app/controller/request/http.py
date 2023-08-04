@@ -8,11 +8,8 @@
 """
 import json
 
-from flask import Blueprint
-from flask import jsonify
-from flask import request
+from flask import Blueprint, request
 
-from app import szr
 from app.handler.factory import SzrResponse
 from app.middleware.HttpClient import Request
 from app.utils.decorator import permission
