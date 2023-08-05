@@ -1,0 +1,16 @@
+version: "3"
+services:
+  szr:
+    build: ops
+    ports:
+      - "7777:7777"
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+  supervisor:
+    build: ops
+    command: supervisord -c /etc/supervisor/supervisor.conf
+    volumes:
+      - ./supervisor.conf:/etc/supervisor/supervisor.conf
+    depends_on:
+      - szr
